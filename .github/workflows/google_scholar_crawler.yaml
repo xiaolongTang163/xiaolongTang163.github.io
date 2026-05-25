@@ -4,18 +4,18 @@ on:
   page_build: 
   schedule:
     - cron: '0 8 * * *'
-  workflow_dispatch: # 新增：允许你在 GitHub 网页上点击按钮手动触发测试，不用苦等系统调度
+  workflow_dispatch: 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 关键：显式赋予该任务对你仓库的写权限，防止由于权限不足卡死在 git push
+      contents: write 
     steps:
-    - uses: actions/checkout@v4 # 升级到 v4，彻底解决 Node.js 20 弃用警告
+    - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v5 # 规范化 Python 环境配置
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -31,10 +31,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # 优雅地推送到特定分支，不再使用易导致卡死的外链变量
         git init
         git add *.json
-        git commit -m "Updated Citation Data" || exit 0 # 如果数据没变，优雅退出，不报错
+        git commit -m "Updated Citation Data" || exit 0
         git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:google-scholar-stats --force
-      env: 
-        GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
