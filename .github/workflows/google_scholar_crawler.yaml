@@ -1,29 +1,40 @@
 name: Get Citation Data
 
 on: 
- page_build: 
- schedule:
-  - cron:  '0 8 * * *'
+  page_build: 
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch: # 新增：允许你在 GitHub 网页上点击按钮手动触发测试，不用苦等系统调度
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 关键：显式赋予该任务对你仓库的写权限，防止由于权限不足卡死在 git push
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Reqs
-      run: |
-        sudo apt-get install python3-setuptools
-    - name: Run
+    - uses: actions/checkout@v4 # 升级到 v4，彻底解决 Node.js 20 弃用警告
+
+    - name: Set up Python
+      uses: actions/setup-python@v5 # 规范化 Python 环境配置
+      with:
+        python-version: '3.10'
+
+    - name: Run Crawler
       run: |
         cd ./google_scholar_crawler
         pip3 install -r requirements.txt
         python3 main.py
-        cd ./results
+
+    - name: Push Citation Data
+      run: |
+        cd ./google_scholar_crawler/results
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # 优雅地推送到特定分支，不再使用易导致卡死的外链变量
         git init
-        git config --local user.name "${GITHUB_ACTOR}"
-        export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
         git add *.json
-        git commit -m "Updated Citation Data"
-        git push "${remote_repo}" HEAD:google-scholar-stats --force
+        git commit -m "Updated Citation Data" || exit 0 # 如果数据没变，优雅退出，不报错
+        git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:google-scholar-stats --force
       env: 
         GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}

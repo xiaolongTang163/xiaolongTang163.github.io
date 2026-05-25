@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "https://mirrors.aliyun.com/rubygems/"
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -16,12 +16,17 @@ gem "github-pages", group: :jekyll_plugins
 
 # gem "jekyll"
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+# 【修改点 1】注释掉了不兼容新版 Ruby 的老旧 wdm 插件
+# gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   # gem "jekyll-archives"
   gem "jekyll-feed"
   gem 'jekyll-sitemap'
-  gem 'hawkins'
+  
+  # 【修改点 2】注释掉了可能附带老旧 wdm 依赖的 hawkins 实时热更新插件
+  # gem 'hawkins'
 end
+
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -21,29 +21,57 @@ I am Xiaolong Tang. I received the B.E. degree in Electronic and Information Eng
 
 My current research interests focus on 3D point cloud upsampling and quality assessment.
 
-I have published 5 papers with total <a href='https://scholar.google.com/citations?user=V6SSunkAAAAJ'>google scholar citations <strong><span id='total_cit'>0+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=V6SSunkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+I have published 3 papers with total <a href='https://scholar.google.com/citations?user=V6SSunkAAAAJ'>google scholar citations <strong><span id='total_cit'>0+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=V6SSunkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
 
 # 📝 Publications 
-<!-- TCE -->
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">📝2026 TCE </div><img src='../images/01_Paper/2026_TCE.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
 
-[PU-T2M: Heterogeneous Knowledge Distilling Network from Transformer to Mamba for Lightweight Point Cloud Upsampling](https://ieeexplore.ieee.org/abstract/document/11520876), **Xiaolong Tang**, Feng Shao; Xiongli Chai; Hangwei Chen; Zhongjie Zhu; Zhiyi Mo
-, *IEEE Transactions on Consumer Electronics*
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">📝2026 TCE</div>
+      <img src='../images/01_Paper/2026_TCE.png' alt="sym" width="100%">
+    </div>
+  </div>
+  <div class='paper-box-text'>
+    <p>
+      <a href="https://ieeexplore.ieee.org/abstract/document/11520876">PU-T2M: Heterogeneous Knowledge Distilling Network from Transformer to Mamba for Lightweight Point Cloud Upsampling</a>, 
+      <strong>Xiaolong Tang</strong>, Feng Shao; Xiongli Chai; Hangwei Chen; Zhongjie Zhu; Zhiyi Mo, 
+      <em>IEEE Transactions on Consumer Electronics</em>
+    </p>
+  </div>
+</div>
 
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">📝2025 Displays</div>
+      <img src='../images/01_Paper/2025_Displays.png' alt="sym" width="100%">
+    </div>
+  </div>
+  <div class='paper-box-text'>
+    <p>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0141938225003075">PU-MG: Mutual guidance framework for Point Cloud Upsampling</a>, 
+      <strong>Xiaolong Tang</strong>, Feng Shao; Baoyang Mu, Hangwei Chen, 
+      <em>Displays</em>
+    </p>
+  </div>
+</div>
 
-<!-- Displays -->
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">📝2025 Displays</div><img src='../images/01_Paper/2025_Displays.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[PU-MG: Mutual guidance framework for Point Cloud Upsampling](https://https://www.sciencedirect.com/science/article/pii/S0141938225003075), **Xiaolong Tang**, Feng Shao; Baoyang Mu, Hangwei Chen, *Displays*
-
-<!-- TIM -->
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">📝2024 TIM<img src='../images/01_Paper/2024_TIM.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[HFCI-PU: High-Frequency Compensation Interpolation Network for Point Cloud Upsampling](https://ieeexplore.ieee.org/document/10755974), **Xiaolong Tang**, Feng Shao; Xiongli Chai; Hangwei Chen; Qiuping Jiang; Xiangchao Meng, *IEEE Transactions on Instrumentation and Measurement*
-
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">📝2024 TIM</div>
+      <img src='../images/01_Paper/2024_TIM.png' alt="sym" width="100%">
+    </div>
+  </div>
+  <div class='paper-box-text'>
+    <p>
+      <a href="https://ieeexplore.ieee.org/document/10755974">HFCI-PU: High-Frequency Compensation Interpolation Network for Point Cloud Upsampling</a>, 
+      <strong>Xiaolong Tang</strong>, Feng Shao; Xiongli Chai; Hangwei Chen; Qiuping Jiang; Xiangchao Meng, 
+      <em>IEEE Transactions on Instrumentation and Measurement</em>
+    </p>
+  </div>
+</div>
 
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
